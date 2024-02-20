@@ -325,7 +325,12 @@
               </p>
               <p class="text-xl">Shortly you will find a confirmation in your email.</p>
 
-              <button class="btn rounded-xl w-[60%] bg-[#1DD100]">Continue</button>
+              <div class="modal-action">
+                <form method="dialog">
+                    <!-- if there is a button in form, it will close the modal -->
+                    <button   class="btn bg-[#27AE60] w-[300px] text-white font-medium rounded-full">Continue</button>
+                </form>
+                </div>
             </div>
           </dialog>
           <!-- <button id="nextBtn" disabled class="w-full btn bg-[#1DD100] text-white">Next</button> -->
