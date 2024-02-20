@@ -68,9 +68,50 @@ for (const btn of buttonColor) {
         taka2.innerText = taka;
         sum += taka;
 
+        const seatLeft =parseInt( document.getElementById("seat-left").innerText);
+        const seats = seatLeft -1;
+        setInnerText("seat-left", seats);
+        setInnerText("Money", taka);
+
+        const apply = document.getElementById ("apply");
+        const nextBtn = document.getElementById("nextBtn");
+        apply.disabled = false;
+        nextBtn.disabled = false;
+
+        apply.addEventListener("click", function(e){
+            const coupon = document.getElementById("coupon").value.split(" ").join('').toUpperCase();
+            // console.log(coupon)
+            if(coupon === 'NEW15'){
+                const discount = taka * 0.15;
+                const grandTotal = taka - discount;
+                setInnerText('Money', grandTotal);
+            }else if(coupon === 'COUPLE20'){
+                const discount = taka * 0.2;
+                const grandTotal = taka - discount;
+                setInnerText('Money', grandTotal);
+            }else{
+                alert('Invalid');
+                return;
+            }
+            
+
+        })
+
+
         click();
+
+
 
     });
 
+}
+function setInnerText (id, value){
+    document.getElementById(id).innerText= value;
+
+}
+
+function transferOtherSection (id){
+    const buyBtn = document.getElementById(id);
+    buyBtn.scrollIntoView({behavior: 'smooth'});
 }
 
