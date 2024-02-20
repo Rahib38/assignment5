@@ -96,7 +96,7 @@ for (const btn of buttonColor) {
             
 
         })
-
+        
 
         click();
 
